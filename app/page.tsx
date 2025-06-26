@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import React, {  useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence, useAnimationControls } from "framer-motion";
 import { IoIosArrowRoundBack } from "react-icons/io";
 import { useSwipeable } from "react-swipeable";
@@ -36,7 +36,6 @@ const Home = () => {
     swipeControls.set({
       x: direction === "left" ? dimensions.width : -dimensions.width,
     });
-    // explain
 
     await swipeControls.start({
       x: 0,
@@ -80,11 +79,12 @@ const Home = () => {
             setNum(index);
           }}
         >
-          <div
+          <motion.div
             className="flex justify-end p-2"
             onClick={(e: React.MouseEvent<HTMLDivElement>) => {
               e.stopPropagation();
             }}
+            whileHover={{ scale: 1.05 }}
           >
             <Link
               href={`/meerkat_meme${item}.jpg`}
@@ -93,7 +93,7 @@ const Home = () => {
             >
               <LuDownload color="white" size={20} />
             </Link>
-          </div>
+          </motion.div>
           <motion.div
             className="w-full h-72 relative"
             whileHover={{ scale: 1.05 }}
