@@ -20,18 +20,17 @@ const Home = () => {
 
     setIsAnimating(true);
 
-if (direction === "left") {
-      setNum((prevNum) => (prevNum + 1) % 33);
-    } else {
-      setNum((prevNum) => (prevNum - 1 + 33) % 33);
-    }
 
     await swipeControls.start({
       x: direction === "left" ? -dimensions.width : dimensions.width,
       transition: { duration: 0.4, delay: 0.2 },
     });
 
-    
+  if (direction === "left") {
+      setNum((prevNum) => (prevNum + 1) % 33);
+    } else {
+      setNum((prevNum) => (prevNum - 1 + 33) % 33);
+    }  
 
     setSwiped(true);
 
