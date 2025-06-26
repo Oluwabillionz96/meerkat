@@ -28,7 +28,7 @@ if (direction === "left") {
 
     await swipeControls.start({
       x: direction === "left" ? -dimensions.width : dimensions.width,
-      transition: { duration: 0.2 },
+      transition: { duration: 0.4, delay: 0.2 },
     });
 
     
